@@ -1,46 +1,36 @@
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-    margin: 0;
-    
-}
-
 .header {
     background-color: #5E2097;
     height: 6.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+}
+
+.header--container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__logo {
     height: 6rem;
+    margin-top: .5rem;
+
+    
+    @include respond(tab-port) {
+        height: 5.5rem;
+    }
 }
 
 .header__home {
-    position: absolute;
-    top: 1.5rem;
-    right: 10rem;
     color: #fff;
-    font-size: 30px;
+    font-size: 3rem;
+
+    
+    @include respond(tab-port) {
+        font-size: 2.5rem;
+    }
 }
 
 .showcase {
@@ -49,6 +39,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
+
+    @include respond(tab-port) {
+        height: 35rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: bottom;
+        background-size: 150%;
+    }
 }
 
 .showcase__header {
@@ -63,9 +62,13 @@ body {
     font-family: 'Azo Sans', sans-serif;
     font-weight: 800;
     color: #fff;
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 0px 2px 5px rgba(77, 76, 76, 0.6);
     text-align: center;
     margin: 4.7rem 0;
+
+    @include respond(phone) {
+        font-size: 6.1rem;
+    }
 }
 /*
 .sub-options {
@@ -85,6 +88,25 @@ body {
     grid-gap: 4rem;
     transform: translateY(-4rem);
     padding-bottom: 2rem;
+
+    @include respond(tab-port) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem 7rem;
+        transform: translateY(0);
+        background-color: rgba(255, 255, 255, 0.493);
+
+        & a {
+            width: 40rem;
+        }   
+    }
+
+    @include respond(phone) {
+        & a {
+            width: 33rem;
+        }    
+    }
 }
 
 .sub-item {
@@ -94,6 +116,8 @@ body {
     box-shadow: .3rem .3rem 1rem rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: 0.2s;
+
+    
 }
 
 .sub-item:hover {
@@ -117,7 +141,7 @@ body {
     font-family: 'Azo Sans', sans-serif;
     color: #F4CB00;
     font-weight: 800;
-    margin-bottom: 7px;
+    margin-bottom: 0.7rem;
 }
 
 .sub-text {
@@ -126,6 +150,10 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 1.3rem;
     color: #707070;
+
+    @include respond(tab-port) {
+        font-size: 1.1rem;
+    }
 }
 
 .footer {
@@ -133,6 +161,10 @@ body {
     background-size: cover;
     background-position: center;
     padding: 4rem 0 2rem 0;
+
+    @include respond(tab-port) {
+        padding: 4rem 2rem 2rem 3rem;
+    }
 }
 
 .footer__nav {
@@ -142,6 +174,12 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    
+    @include respond(tab-port) {
+        display: block;
+        margin: 0;
+        text-align: left;
+    }
 }
 
 /*
@@ -149,12 +187,22 @@ body {
 
 }*/
 
+@include respond(tab-port) {
+    .footer__nav--group {
+        margin-bottom: 1.5rem;
+    }
+}
+
 .footer__nav--head {
     font-family: 'Azo Sans', sans-serif;
     font-size: 1.7rem;
     color: #F4CB00;
     font-weight: 800;
-    margin-bottom: 7px;
+    margin-bottom: .7rem;
+
+    @include respond(tab-port) {
+        font-size: 2rem;
+    }
 }
 
 /*
@@ -168,7 +216,11 @@ body {
     font-style: italic;
     font-size: 1.2rem;
     padding: .7rem 0;
-    font-weight: 500;
+    font-weight: 300;
+
+    @include respond(tab-port) {
+        font-size: 1.5rem;
+    }
 }
 
 .footer__nav--links {
@@ -192,65 +244,3 @@ body {
 .footer__logo {
     height: 6rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*First Option Page Styling*/
-.subcontainer {
-    display: flex;
-    height: 90vh;
-}
-
-.subcontainer__img-box {
-    flex: .50;
-    background-image: url(../img/pexels-photo-1216589.jpeg);
-    background-size: cover;
-    background-position: 68% 0%;
-}
-
-.subcontainer__img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.subcontainer__content-box {
-    flex: .50;
-    padding: 8rem;
-    padding-left: 10rem;
-}
-
-.subcontainer__header {
-    margin-bottom: 4rem;
-    color: #F4CB00;
-    font-family: 'Azo Sans', sans-serif;
-    font-size: 4rem;
-    font-weight: 800;
-}
-
-.subcontainer__text {
-    color: #707070;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-}
-
-
-
-/*Second Option Page Styling*/
-
-/*Third Option Page Styling*/
